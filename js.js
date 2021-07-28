@@ -10,6 +10,12 @@ function pickRestaurant() {
     document.getElementById("placeToGo").innerHTML = "Place to go: " + placeToGoArr;
 };
 
+function result() {
+    var placeValue = document.getElementById("txtInput").value;
+       console.log("The place=" + (placeValue));
+       restaurants.push(placeValue);
+       console.log(restaurants);
+ }
 //Button 
 document.getElementById("clickMe").onclick = function () { pickRestaurant(); };
 

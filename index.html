@@ -1,16 +1,25 @@
 <!doctype html>
 <html lang="en-us">
-    <head>
-        <meta charset="UTF-08">
-        <title>Where to Go</title>
-    </head>
 
-    <body>
-       <div class="container">
+<head>
+    <meta charset="UTF-08">
+    <title>Where to Go</title>
+</head>
+
+<body>
+    <div class="container">
         <p id="placeToGo"></p>
-       </div>
-       <input id="clickMe" type="button" value="clickme" onclick="pickRestaurant();" />
-       <script type="text/javascript" src="js.js"></script>
-    </body>
-    
+    </div>
+
+    <div>
+        <input id="clickMe" type="button" value="clickme" onclick="pickRestaurant();" />
+    </div>
+<br>
+    <div>
+        <input type="text" id="txtInput" placeholder="Enter a Place">
+        <button type="button" onclick="result();">Add Place</button>
+    </div>
+    <script type="text/javascript" src="js.js"></script>
+</body>
+
 </html>
