@@ -1,8 +1,8 @@
 var placeToGoArr = [];
 
-//app will pick a random restaurants from an array of restaurants
 var restaurants = ["chinese", "japaneses", "burgers", "sandwiches"];
-
+///////////////////////////////////////////////FUNCTIONS/////////////////////////////////////////////////////
+//Pick a restaurant at random 
 function pickRestaurant() {
     placeToGoArr = [];
     var placeToGo = restaurants[Math.floor(Math.random() * restaurants.length)];
@@ -10,15 +10,31 @@ function pickRestaurant() {
     document.getElementById("placeToGo").innerHTML = "Place to go: " + placeToGoArr;
 };
 
-function result() {
+//add restaurants
+function addRestaurant() {
     var placeValue = document.getElementById("txtInput").value;
-       console.log("The place=" + (placeValue));
-       restaurants.push(placeValue);
-       console.log(restaurants);
- }
-//Button 
+    console.log("The place=" + (placeValue));
+    restaurants.push(placeValue);
+    showRestaurants();
+    console.log(restaurants);
+};
+
+//Print restaurant array to the DOM
+function showRestaurants() {
+    var results ="";
+    restaurants.forEach(function (item) {
+        results += "<li>" + item
+    });
+    document.getElementById("restaurantList").innerHTML = results;
+};
+
+showRestaurants();
+
+
+///////////////////////////////////////////////BUTTONS/////////////////////////////////////////////////////
+//clickme Button tied to the pickrestaurant function
 document.getElementById("clickMe").onclick = function () { pickRestaurant(); };
 
-//add restaurants
+
 
 //remove restaurants
