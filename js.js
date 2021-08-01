@@ -21,13 +21,17 @@ function addRestaurant() {
 
 //Print restaurant array to the DOM
 function showRestaurants() {
-    var results ="";
+    var results = "";
     restaurants.forEach(function (item) {
-        results += "<li>" + item
+        results += "<li>" + item + " " + "<input type='button' onclick='deleteRestaurant()' value='Delete' /></li>"
     });
     document.getElementById("restaurantList").innerHTML = results;
 };
 
+//remove restaurants
+function deleteRestaurant() {
+    
+};
 showRestaurants();
 
 
@@ -37,4 +41,4 @@ document.getElementById("clickMe").onclick = function () { pickRestaurant(); };
 
 
 
-//remove restaurants
+

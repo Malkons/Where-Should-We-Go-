@@ -8,17 +8,19 @@
 
 <body>
     <div class="container">
+        <div>
+            <p>
+            <ol id=restaurantList></ol>
+            </p>
+        </div>
         <p id="placeToGo"></p>
         <div>
-            <input id="clickMe" type="button" value="clickme" onclick="pickRestaurant();" />
+            <input id="clickMe" type="button" value="choose place" onclick="pickRestaurant();" />
         </div>
         <br>
         <div>
             <input type="text" id="txtInput" placeholder="Enter a Place">
             <button type="button" onclick="addRestaurant();">Add Place</button>
-        </div>
-        <div>
-            <p><ol id=restaurantList></ol></p>
         </div>
     </div>
 
