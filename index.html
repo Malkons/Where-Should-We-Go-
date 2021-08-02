@@ -9,18 +9,21 @@
 <body>
     <div class="container">
         <div>
-            <p>
-            <ol id=restaurantList></ol>
-            </p>
+            <p id=pickedPlaceToGo></p>
         </div>
-        <p id="placeToGo"></p>
         <div>
             <input id="clickMe" type="button" value="choose place" onclick="pickRestaurant();" />
         </div>
+        <br><br>
+        <div>
+            <input type="text" id="placeToGo">
+        </div>
         <br>
         <div>
-            <input type="text" id="txtInput" placeholder="Enter a Place">
-            <button type="button" onclick="addRestaurant();">Add Place</button>
+            <input type="button" onclick="populateListOfPlaces()" value="Submit" />
+        </div>
+        <div>
+            <ol id=restaurantList></ol>
         </div>
     </div>
 
