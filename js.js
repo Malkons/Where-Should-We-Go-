@@ -31,7 +31,6 @@ function preLoadPlaces() {
 function populateListOfPlaces() {
     var placeToGo = document.getElementById("placeToGo").value;
     restaurants.push(placeToGo);
-    console.log(restaurants);
     var entry = document.createElement("li");
     entry.appendChild(document.createTextNode(placeToGo));
     entry.setAttribute("id", "item" + lastid);
@@ -46,52 +45,15 @@ function populateListOfPlaces() {
 
 function deletePlace(itemid) {
     var item = document.getElementById(itemid);
-    console.log(itemid);
     list.removeChild(item);
-    console.log("what is " + item.dataset.name);
     var place = item.dataset.name;
     console.log(place);
     restaurants = restaurants.filter(e => e !== place);
     console.log(restaurants);
 };
 
-function getPlaces() {
-    var places = [];
-    for (var i = 0; i < list.children.length; i++) {
-        places.push(list.children[i].getAttribute("data-name"));//get previously set attribute and add to array
-    }
-    return places;
-};
-
 preLoadPlaces();
-//add restaurants
-// function addRestaurant() {
-//     var placeValue = document.getElementById("txtInput").value;
-//     console.log("The place=" + (placeValue));
-//     restaurants.push(placeValue);
-//     showRestaurants();
-//     console.log(restaurants);
-// };
 
-// //Print restaurant array to the DOM
-// function showRestaurants() {
-//     var results = "";
-//     restaurants.forEach(function (item) {
-//         results += "<li>" + item + " " + "<input type='button' onclick='deleteRestaurant( " + item + " )' value='Delete' /></li>"
-//     });
-//     document.getElementById("restaurantList").innerHTML = results;
-// };
-
-// //remove restaurants
-// function deleteRestaurant() {
-
-// };
-// showRestaurants();
-
-
-///////////////////////////////////////////////BUTTONS/////////////////////////////////////////////////////
-//clickme Button tied to the pickrestaurant function
-//document.getElementById("clickMe").onclick = function () { pickRestaurant(); };
 
 
 
