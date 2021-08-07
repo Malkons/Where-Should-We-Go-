@@ -10,6 +10,7 @@ function pickRestaurant() {
     var placeToGo = restaurants[Math.floor(Math.random() * restaurants.length)];
     placeToGoArr.push(placeToGo);
     document.getElementById("pickedPlaceToGo").innerHTML = "Place to go: " + placeToGoArr;
+    vetoButton();
 };
 
 function preLoadPlaces() {
@@ -52,8 +53,15 @@ function deletePlace(itemid) {
     console.log(restaurants);
 };
 
-preLoadPlaces();
+function vetoButton() {
+    var entry = document.getElementById("pickedPlaceToGo");
+    var deleteButton = document.createElement("button");
+    deleteButton.appendChild(document.createTextNode("Veto"));
+    deleteButton.setAttribute('onClick', 'deletePlace("' + 'item' + lastid + '")');
+    entry.appendChild(deleteButton);
+};
 
+preLoadPlaces();
 
 
 
