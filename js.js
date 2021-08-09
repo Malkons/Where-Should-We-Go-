@@ -1,5 +1,6 @@
 var placeToGoArr = [];
 var list = document.getElementById("restaurantList");
+var vetoItem = document.getElementById("pickedPlaceToGo");
 var lastid = 0;
 
 var restaurants = ["chinese", "japaneses", "burgers", "sandwiches"];
@@ -10,7 +11,11 @@ function pickRestaurant() {
     var placeToGo = restaurants[Math.floor(Math.random() * restaurants.length)];
     placeToGoArr.push(placeToGo);
     document.getElementById("pickedPlaceToGo").innerHTML = "Place to go: " + placeToGoArr;
-    vetoButton();
+    var entry = document.getElementById("pickedPlaceToGo");
+    var vetoButton = document.createElement("button");
+    vetoButton.appendChild(document.createTextNode("Veto"));
+    vetoButton.setAttribute('onClick', 'vetoButton("' + 'item' + lastid + '")');
+    entry.appendChild(vetoButton);
 };
 
 function preLoadPlaces() {
@@ -53,12 +58,9 @@ function deletePlace(itemid) {
     console.log(restaurants);
 };
 
-function vetoButton() {
-    var entry = document.getElementById("pickedPlaceToGo");
-    var deleteButton = document.createElement("button");
-    deleteButton.appendChild(document.createTextNode("Veto"));
-    deleteButton.setAttribute('onClick', 'deletePlace("' + 'item' + lastid + '")');
-    entry.appendChild(deleteButton);
+function vetoButton(itemid) {
+    document.getElementById("pickedPlaceToGo").innerHTML = "Place to go:";     
+    pickRestaurant();
 };
 
 preLoadPlaces();
